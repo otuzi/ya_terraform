@@ -1,0 +1,32 @@
+{
+  "variables": {
+    "folder_id": "",
+    "zone": "",
+    "token": "",
+    "subnet_id": "",
+    "ssh_public_key": ""
+  },
+  "builders": [
+    {
+      "type": "yandex",
+      "folder_id": "{{ user `folder_id` }}",
+      "zone": "{{ user `zone` }}",
+      "token": "{{ user `token` }}",
+      "image_name": "web-nginx-demo-{{timestamp}}",
+      "source_image_family": "ubuntu-2204-lts",
+      "subnet_id": "{{ user `subnet_id` }}",
+      "image_description": "my custom ubuntu with nginx",
+      "use_ipv4_nat": true,
+      "ssh_username": "ubuntu",
+      "metadata": {
+        "ssh-keys": "ubuntu:{{ user `ssh_public_key` }}"
+      }
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "./scripts/install-nginx.sh"
+    }
+  ]
+}
