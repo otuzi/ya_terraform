@@ -48,37 +48,37 @@ mysql_password        = ""
 ---
 **Что делает этот код:**
 
-Автоматически создает всю облачную инфраструктуру для веб-приложения с балансировкой и логированием:
+**Автоматически создает всю облачную инфраструктуру** для веб-приложения с балансировкой и логированием:
 
-Виртуальные сети, подсети (VPC/Subnets)
+**Виртуальные сети, подсети** (VPC/Subnets)
 
-Instance Group из 3 VM (web-сервера, масштабируемые)
+**Instance Group из 3 VM** (web-сервера, масштабируемые)
 
-Application Load Balancer (ALB) с маршрутами на разные бекенды по разным URL
+**Application Load Balancer (ALB)** с маршрутами на разные бекенды по разным URL
 
-ALB Target Groups и Backend Groups (для маршрутизации трафика)
+**ALB Target Groups и Backend Group**s (для маршрутизации трафика)
 
-HTTP Router + Virtual Host (гибкая маршрутизация)
+**HTTP Router + Virtual Host**
 
-DNS-зона и A-запись (ваш домен сразу указывает на ALB)
+**DNS-зона и A-запись** (домен сразу указывает на ALB)
 
-Managed MySQL кластер, база и пользователь
+**Managed MySQL** кластер, база и пользователь
 
-Cloud Function для записи ALB-логов в MySQL
+**Cloud Function** для записи ALB-логов в MySQL
 
-(НЕ ДО КОНЦА) HTTP Trigger для Cloud Function (требует ручных настроек)
+**HTTP Trigger для Cloud Function** (требует ручных настроек)
 
-Важно знать:
+**Важно знать:**
 Стенд поднимается командами:
-`terraform init`
-`terraform plan`
-`terraform apply`
+- `terraform init`
+- `terraform plan`
+- `terraform apply`
 
 Все основные параметры и endpoint-ы выведутся из outputs.tf — смотри вывод после разворачивания инфраструктуры.
 
 Статическая страница доступна по адресу:
-`http://lab54.tech/page1`
-`http://lab54.tech/page2`
+- `http://lab54.tech/page1`
+- `http://lab54.tech/page2`
 
 
 итоговая страница
