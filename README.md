@@ -81,5 +81,5 @@ mysql_password        = ""
 - `http://lab54.tech/page2`
 
 
-итоговая страница
+**итоговая страница:**
 ![http://lab54.tech/page1](images/Screenshot%202025-07-14%20at%2019.25.58.png)
