@@ -15,7 +15,7 @@
 
 ### для работы terraform необходимо:
 создать файл `ya_vm_terraform/personal.auto.tfvars` и добавить в него значения для следующих переменных:
-```json
+```yml
 cloud_id              = ""
 folder_id             = ""
 vms_ssh_root_key      = "ssh-rsa"
